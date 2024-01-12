@@ -1,0 +1,24 @@
+[[Google Colab matplotlib 한글 폰트 오류 문제 해결]]
+
+[방법1]
+!pip install koreanize-matplotlib
+import koreanize_matplotlib
+
+
+[방법2]
+# 1. 나눔 폰트 다운
+!sudo apt-get install -y fonts-nanum
+!sudo fc-cache -fv
+!rm ~/.cache/matplotlib -rf
+
+# 2. 런타임 다시 시작
+
+# 3. matplotlib의 폰트를 Nanum 폰트로 지정
+import matplotlib.pyplot as plt
+plt.rc('font', family='NanumBarunGothic') 
+
+[macos에서의 matplotlib 한글 폰트]
+# matplotlib 한글 폰트 오류 문제 해결
+# from matplotlib import font_manager, rc
+# rc('font', family='AppleGothic')
+
